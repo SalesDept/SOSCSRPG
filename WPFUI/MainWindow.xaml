@@ -78,7 +78,8 @@
 
                     <TextBlock Grid.Row="0"
                                HorizontalAlignment="Center"
-                               Text="{Binding CurrentLocation.Name}"/>
+                               Text="{Binding CurrentLocation.Name}"
+                               TextWrapping="Wrap"/>
                     <Image Grid.Row="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
