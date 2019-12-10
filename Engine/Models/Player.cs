@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.ComponentModel; //neccesary for pub/sub pattern
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +9,7 @@ namespace Engine.Models
 {
     public class Player : INotifyPropertyChanged
     {
+        //Subscriber Variables to hold attribute values
         private string _name;
         private string _characterClass;
         private int _hitPoints;
@@ -16,6 +17,7 @@ namespace Engine.Models
         private int _level;
         private int _gold;
 
+        //Pub/Sub Design Pattern to update Private Vars when Properties change in event channel
         public string Name 
         {
             get { return _name; }
@@ -73,6 +75,7 @@ namespace Engine.Models
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //Publisher method to notify when properties change
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

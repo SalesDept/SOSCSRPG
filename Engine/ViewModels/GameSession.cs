@@ -10,9 +10,11 @@ namespace Engine.ViewModels
     public class GameSession
     {
         public Player CurrentPlayer { get; set; }
+        public Location CurrentLocation { get; set; }
 
         public GameSession() 
         {
+            //default player class for testing
             CurrentPlayer = new Player();
             CurrentPlayer.Name = "Scott";
             CurrentPlayer.CharacterClass = "Fighter";
@@ -20,6 +22,13 @@ namespace Engine.ViewModels
             CurrentPlayer.Gold = 1000000;
             CurrentPlayer.ExperiencePoints = 0;
             CurrentPlayer.Level = 1;
+            //default location class for testing
+            CurrentLocation = new Location();
+            CurrentLocation.Name = "Home";
+            CurrentLocation.XCoordinate = 0;
+            CurrentLocation.YCoordinate = -1;
+            CurrentLocation.Description = "This is your house";
+            CurrentLocation.ImageName = "/Engine;component/Images/Locations/Home.png";
             
         }
     }
