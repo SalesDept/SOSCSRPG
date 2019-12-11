@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel; //neccesary for inventory
 using System.ComponentModel; //neccesary for pub/sub pattern
 using System.Linq;
 using System.Text;
@@ -73,6 +74,12 @@ namespace Engine.Models
             } 
         }
 
+        public ObservableCollection<GameItem> Inventory { get; set; }
+
+        public Player() 
+        {
+            Inventory = new ObservableCollection<GameItem>();
+        }
         
         
     }
